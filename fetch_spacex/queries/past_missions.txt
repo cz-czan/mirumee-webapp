@@ -1,0 +1,1 @@
+{"query":"{\r\n  launchesPast {\r\n    mission_name\r\n    rocket {\r\n      first_stage {\r\n        cores {\r\n          core {\r\n            id\r\n          }\r\n        }\r\n      }\r\n      second_stage {\r\n        payloads {\r\n          payload_mass_kg\r\n        }\r\n      }\r\n    }\r\n    launch_success\r\n  }\r\n}\r\n","variables":{}}
