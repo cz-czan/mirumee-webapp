@@ -1,3 +1,4 @@
+import rest_framework.request
 from django.urls import include, path
 from rest_framework import routers
 from mirumee_webapp import views
@@ -6,9 +7,9 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'cores', views.RocketCoreViewSet)
 
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('choose-favorite/', views.choose_favorite_rocket_core),
+    path('view-favorite/', views.view_favorite_rocket)
+
 ]
