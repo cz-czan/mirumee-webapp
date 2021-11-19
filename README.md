@@ -34,7 +34,7 @@ So, after making migrations and migrating, create a superuser for your first req
 python manage.py createsuperuser
 ```
 and afterwards use that username and password to authenticate to the API with HTTP BA ( basic authentication ) for every
-request.
+request ( unless you authenticate as another user ).
 ## Usage
 Cores are available under the `/api/cores/` endpoint. 
 
