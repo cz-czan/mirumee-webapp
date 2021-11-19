@@ -51,3 +51,5 @@ payload represent your favorite rocket using it's `core_id`:
   "core_id": "B1048"
 }
 ```
+
+In order to view your current favorite core, send a `GET` request to `/api/view-favorite/`.
