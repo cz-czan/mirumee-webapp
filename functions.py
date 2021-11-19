@@ -1,4 +1,4 @@
-from fetch_spacex.main import get_full_core_information
+from mirumee_webapp.fetch_spacex.main import get_full_core_information
 from mirumee_webapp.models import RocketCore
 
 
