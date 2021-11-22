@@ -35,6 +35,14 @@ python manage.py createsuperuser
 ```
 and afterwards use that username and password to authenticate to the API with HTTP BA ( basic authentication ) for every
 request.
+
+Add the app urls to the project's `urls.py`:
+````python
+urlpatterns = [
+    ...
+    path('', include(mirumee_webapp.urls))
+]
+````
 ## Usage
 Cores are available under the `/api/cores/` endpoint. 
 

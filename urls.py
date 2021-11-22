@@ -8,8 +8,8 @@ router.register(r'users', views.UserViewSet)
 router.register(r'cores', views.RocketCoreViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('choose-favorite/', views.choose_favorite_rocket_core),
-    path('view-favorite/', views.view_favorite_rocket)
+    path('api/', include(router.urls)),
+    path('api/choose-favorite/', views.choose_favorite_rocket_core),
+    path('api/view-favorite/', views.view_favorite_rocket)
 
 ]

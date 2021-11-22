@@ -5,7 +5,7 @@ from mirumee_webapp.models import RocketCore, User
 class RocketCoreSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RocketCore
-        fields = ['core_id', 'reuse_count', 'total_payload_mass']
+        fields = ['url','core_id', 'reuse_count', 'total_payload_mass']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

@@ -15,6 +15,7 @@ from mirumee_webapp.serializers import UserSerializer, RocketCoreSerializer
 from mirumee_webapp.models import RocketCore, User
 from mirumee_webapp.functions import fetch_and_save_rocket_core_data
 
+
 class UserViewSet(viewsets.ModelViewSet):
     """
         Endpoint for editing/viewing users.
@@ -22,10 +23,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-    @action(detail=True, methods=['post'])
-    def designate_favorite_rocket(self, request, pk=None):
-        print(request)
 
 
 class RocketCoreViewSet(viewsets.ModelViewSet):
@@ -35,6 +32,11 @@ class RocketCoreViewSet(viewsets.ModelViewSet):
     queryset = RocketCore.objects.all().order_by('-reuse_count')
     serializer_class = RocketCoreSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
 
     # The list method below is overridden so as to detect if the database is empty, and if so, call the
     # fetch_and_save_rocket_core_data() function from functions.py
