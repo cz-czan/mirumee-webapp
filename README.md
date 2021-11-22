@@ -34,15 +34,8 @@ So, after making migrations and migrating, create a superuser for your first req
 python manage.py createsuperuser
 ```
 and afterwards use that username and password to authenticate to the API with HTTP BA ( basic authentication ) for every
-request.
-
-Add the app urls to the project's `urls.py`:
-````python
-urlpatterns = [
-    ...
-    path('', include(mirumee_webapp.urls))
-]
-````
+request ( unless you authenticate as another user ).
+>>>>>>> 879dfa886d828163335fc09d4a8abba391413680
 ## Usage
 Cores are available under the `/api/cores/` endpoint. 
 
